@@ -44,7 +44,7 @@ GAME RULES:
 		document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
 		// Check if the player won the game
-		if (scores[activePlayer] >= 100) {
+		if (scores[activePlayer] >= 50) {
 			document.querySelector('#name-' + activePlayer).textContent = '- WINNER -';
 			document.querySelector('.dice').style.display = 'none';
 			document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
