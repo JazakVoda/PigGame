@@ -22,7 +22,7 @@ GAME RULES:
 		// 2. Display the result
 		var diceDOM = document.querySelector('.dice');
 		diceDOM.style.display = 'block';
-		diceDOM.src = 'dice-' + dice + '.png';
+		diceDOM.src = 'img/dice-' + dice + '.png';
 
 		// 3. Update the round score IF the rolled number was NOT a 1
 		if (dice !== 1) {
