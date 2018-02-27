@@ -35,7 +35,7 @@ GAME RULES:
 			document.querySelector('#text-' + activePlayer).textContent = 'Sorry, you roll ' + dice1 + '-' + dice2 +' and lost all the points';
 			nextPlayer();
 
-		} else if (dice1 !== 1 && dice2 !== 1) {
+		} else if (dice1 !== 1 && dice2 !== 1) { 
 			roundScore = roundScore + dice1 + dice2;
 			document.querySelector('#current-' + activePlayer).textContent = roundScore;
 		} else if (dice1 == 1 || dice2 == 1) {
