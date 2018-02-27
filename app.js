@@ -32,11 +32,16 @@ GAME RULES:
 			//Player looses score
 			scores[activePlayer] = 0;
 			document.querySelector('#score-' + activePlayer).textContent = '0';
+			document.querySelector('#text-' + activePlayer).textContent = 'Sorry, you roll ' + dice1 + '-' + dice2 +' and lost all the points';
 			nextPlayer();
 
 		} else if (dice1 !== 1 && dice2 !== 1) {
 			roundScore = roundScore + dice1 + dice2;
 			document.querySelector('#current-' + activePlayer).textContent = roundScore;
+		} else if (dice1 == 1 || dice2 == 1) {
+			// If roll 1 write message
+			document.querySelector('#text-' + activePlayer).textContent = 'Sorry, you roll 1 and lose round score';
+			nextPlayer();
 		} else {
 			// Next player
 			nextPlayer();
@@ -100,6 +105,9 @@ GAME RULES:
 
 		document.getElementById('dice-1').style.display = 'none';
 		document.getElementById('dice-2').style.display = 'none';
+
+		// Delete text-1/text-2
+		document.querySelector('#text-' + activePlayer).textContent = '';
 	}
 
 	document.querySelector('.btn-new').addEventListener('click', function() {
@@ -127,4 +135,6 @@ GAME RULES:
 		document.querySelector('.player-0-panel').classList.remove('active');
 		document.querySelector('.player-1-panel').classList.remove('active');
 		document.querySelector('.player-0-panel').classList.add('active');
+		document.querySelector('#text-' + activePlayer).textContent = '';
+	
 	}
